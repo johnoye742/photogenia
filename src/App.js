@@ -27,7 +27,7 @@ function Main() {
   const [result, setResult] = useState('')
   async function request(data) {
     const response = await fetch(
-      "https://api-inference.huggingface.co/models/prompthero/openjourney",
+      "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-2-1",
       {
         headers: { Authorization: "Bearer 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" },
         method: "POST",
@@ -58,7 +58,10 @@ function Main() {
   return (
     <div className='py-10 px-16 w-full'>
       <h1 className=' text-4xl text-center mb-2'>Welcome To Photogenia</h1>
-      <p className=' text-center mb-5'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid itaque adipisci error facilis, eius natus commodi dolor ducimus ut expedita neque? Repudiandae nemo dicta odit quaerat a libero officiis facilis!</p>
+      <p className=' text-center mb-5'>This project makes use of Stable Diffusion 2 Image generative AI. Most images are not perfect due to limitations of the AI. Some limitations are The model does not achieve perfect photorealism
+The model cannot render legible text
+The model does not perform well on more difficult tasks which involve compositionality, such as rendering an image corresponding to “A red cube on top of a blue sphere” etc.<br/>
+Note that some prompts might be slow to load. Enter prompt in the input below.</p>
       <InputBox prompt={prompt} setPrompt={setPrompt} submitPrompt={submitPrompt} status={status} setResult={setResult} setStatus={setStatus}/>
       
       <div className=' py-5 flex flex-col items-center text-center w-full'>
